@@ -19,8 +19,8 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         Team club = new Team();
-        Player player = new Player("cristiano", 38, "Portuguesse");
-        Player player2 = new Player("Modric", 37, "Croatian");
+        Player player = new Player("cristiano", 38, "Portuguesse", "");
+        Player player2 = new Player("Modric", 37, "Croatian", "");
         club.addPlayer(player);
         club.addPlayer(player2);
         System.out.println(club.numOfPlayers());
