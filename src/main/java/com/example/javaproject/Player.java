@@ -1,18 +1,14 @@
 package com.example.javaproject;
 
-import javafx.scene.image.Image;
-
 public class Player {
     private String name;
     private int age;
     private String nationality;
-    private Image img;
 
-    public Player(String name, int age, String nationality, String src) {
+    public Player(String name, int age, String nationality) {
         setName(name);
         setAge(age);
         setNationality(nationality);
-        this.img = new Image(Player.class.getResourceAsStream(src));
     }
 
     public String getName() {
@@ -76,10 +72,6 @@ public class Player {
         String trimmedName = nationality.trim();
         String capitalized = trimmedName.substring(0,1).toUpperCase() + trimmedName.substring(1);
         this.nationality = capitalized;
-    }
-
-    public Image getImage() {
-        return this.img;
     }
 
     @Override
