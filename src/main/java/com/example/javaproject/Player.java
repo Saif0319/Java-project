@@ -76,6 +76,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return getName() + " - " + getNationality();
+        return getName();
     }
 }

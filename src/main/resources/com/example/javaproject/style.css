@@ -1,0 +1,25 @@
+.root {
+    -fx-background-color: linear-gradient(deepskyblue, lightskyblue);
+    -fx-font-size: 16px;
+}
+
+.button {
+    -fx-background-color: linear-gradient(rgba(255, 251, 0, 1), rgba(255, 183, 0, 1));
+    -fx-background-radius: 50px;
+    -fx-text-fill: #1b7dbf;
+    -fx-font-size: 12px;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(rgba(255, 251, 0, 0.7), rgba(255, 183, 0, 0.7));
+}
+
+.text {
+    -fx-font-style: italic;
+    -fx-font-family: Roboto;
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(#6ff540 0%, #4ad631 25%, #57C84D 75%, #2EB62C 100%);
+    -fx-text-fill: white;
+}

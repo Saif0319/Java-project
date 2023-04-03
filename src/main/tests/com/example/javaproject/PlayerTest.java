@@ -48,27 +48,4 @@ public class PlayerTest {
     public void testToString() {
         assertEquals("Cristiano - Portugal", player.toString());
     }
-
-/*
-    @org.junit.Test
-    public void setNameConstructorInvalid() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            Player pl = new Player("cr", 38, "Portuguesse");
-        });
-    }
-
-    @org.junit.Test
-    public void setNationalityConstructorInvalid() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            Player pl = new Player("cristiano", 50, "pr");
-        });
-    }
-
-    @org.junit.Test
-    public void setAgeConstructorInvalid() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            Player pl = new Player("cristiano", 50, "Portuguesse");
-        });
-    }
-    */
 }
