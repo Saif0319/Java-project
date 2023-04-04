@@ -45,8 +45,8 @@ public class TeamViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        Player player = new Player("cristiano", 38, "Portuguesse");
-        Player player2 = new Player("Modric", 37, "Croatian");
+        Player player = new Player("cristiano", "38", "Portuguesse");
+        Player player2 = new Player("Modric", "37", "Croatian");
         club = new Team();
             club.addPlayer(player);
             club.addPlayer(player2);
@@ -82,11 +82,7 @@ public class TeamViewController implements Initializable {
         }
 
         try {
-             player = new Player(name.getText(), Integer.parseInt(age.getText()), nationality.getText());
-            /*if(listOfPls.getItems().contains(player.toString())) {
-                addError.setText("Player is already registered");
-                addError.setVisible(true);
-            }*/
+             player = new Player(name.getText(), age.getText(), nationality.getText());
 
             for (Player pl : club.getPlayers()) {
                 if(pl.getName().toUpperCase().equals(player.getName().toUpperCase())){
@@ -100,11 +96,13 @@ public class TeamViewController implements Initializable {
                 addError.setVisible(false);
                 listOfPls.getItems().add(player.toString());
                 club.addPlayer(player);
+                name.setText("");
+                age.setText("");
+                nationality.setText("");
 
 
         }
         catch (Exception e) {
-            System.out.println(e.getMessage());
             addError.setText(e.getMessage());
             addError.setVisible(true);
         }

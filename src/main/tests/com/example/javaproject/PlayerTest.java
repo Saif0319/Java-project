@@ -9,7 +9,7 @@ public class PlayerTest {
 
     @org.junit.Before
     public void setUp() throws Exception {
-        player = new Player("cristiano", 38, "portugal");
+        player = new Player("cristiano", "38", "portugal");
     }
 
     @org.junit.Test
@@ -27,14 +27,21 @@ public class PlayerTest {
 
     @org.junit.Test
     public void setAge() {
-        player.setAge(26);
+        player.setAge("26");
         assertEquals(26, player.getAge());
     }
 
     @org.junit.Test
     public void setAgeInvalid() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            player.setAge(10);
+            player.setAge("10");
+        });
+    }
+
+    @org.junit.Test
+    public void setAgeNotInt() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            player.setAge("age");
         });
     }
 

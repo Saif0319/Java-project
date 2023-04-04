@@ -5,7 +5,7 @@ public class Player {
     private int age;
     private String nationality;
 
-    public Player(String name, int age, String nationality) {
+    public Player(String name, String age, String nationality) {
         setName(name);
         setAge(age);
         setNationality(nationality);
@@ -42,12 +42,23 @@ public class Player {
     /*
     * the player can't be older than 47 years old and younger than 17
      */
-    public void setAge(int age) {
-        if(age > 47 || age < 17) {
+    public void setAge(String age) {
+
+        int parsedAge;
+
+        try {
+            parsedAge = Integer.parseInt(age);
+        }
+        catch (Exception e) {
+            throw new IllegalArgumentException("Age must be an integer");
+        }
+
+
+        if(parsedAge > 47 || parsedAge < 17) {
             throw new IllegalArgumentException("Players older than 47 or younger than 17 can't be added to your team");
         }
 
-        this.age = age;
+        this.age = parsedAge;
     }
 
     public String getNationality() {
