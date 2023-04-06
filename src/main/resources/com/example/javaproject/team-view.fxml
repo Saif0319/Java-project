@@ -74,7 +74,7 @@
                   <HBox alignment="CENTER" spacing="20.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#addPlBtn" text="Add Player" />
-                        <Button id="rmPl" mnemonicParsing="false" onAction="#removeBtn" onMouseClicked="#removeBtn" text="Remove Player" />
+                        <Button id="rmPl" mnemonicParsing="false" onMouseClicked="#removeBtn" text="Remove Player" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="25.0" />
