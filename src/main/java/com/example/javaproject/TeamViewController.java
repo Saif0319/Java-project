@@ -28,7 +28,7 @@ public class TeamViewController implements Initializable {
     @FXML
     private Text addError;
     @FXML
-    private ListView<String> listOfPls;
+    private ListView<Player> listOfPls;
 
     @FXML
     private Text plAge;
@@ -50,8 +50,8 @@ public class TeamViewController implements Initializable {
         club = new Team();
             club.addPlayer(player);
             club.addPlayer(player2);
-            listOfPls.getItems().add(player.toString());
-            listOfPls.getItems().add(player2.toString());
+            listOfPls.getItems().add(player);
+            listOfPls.getItems().add(player2);
 
         plName.setVisible(false);
         plAge.setVisible(false);
@@ -75,7 +75,7 @@ public class TeamViewController implements Initializable {
         }
 
         if(nationality.getText().isEmpty()) {
-            nationalityErr.setText("Please enter the players nationality");
+            nationalityErr.setText("Please enter the player's nationality");
             nationalityErr.setVisible(true);
         } else {
             nationalityErr.setVisible(false);
@@ -94,7 +94,7 @@ public class TeamViewController implements Initializable {
 
 
                 addError.setVisible(false);
-                listOfPls.getItems().add(player.toString());
+                listOfPls.getItems().add(player);
                 club.addPlayer(player);
                 name.setText("");
                 age.setText("");
@@ -112,9 +112,21 @@ public class TeamViewController implements Initializable {
     }
 
     @FXML
-    void removeBtn(ActionEvent event) {
-        club.getPlayers().remove(listOfPls.getSelectionModel().getSelectedIndex());
-        listOfPls.getItems().remove(listOfPls.getSelectionModel().getSelectedIndex());
+    void removeBtn(MouseEvent event) {
+        if(listOfPls.getSelectionModel().getSelectedIndex() != -1) {
+            club.getPlayers().remove(listOfPls.getSelectionModel().getSelectedIndex());
+            listOfPls.getItems().remove(listOfPls.getSelectionModel().getSelectedIndex());
+
+            if(listOfPls.getSelectionModel().getSelectedIndex() != -1) {
+                plName.setText(club.getPlayers().get(listOfPls.getSelectionModel().getSelectedIndex()).getName());
+                plAge.setText(Integer.toString(club.getPlayers().get(listOfPls.getSelectionModel().getSelectedIndex()).getAge()));
+                plNationality.setText(club.getPlayers().get(listOfPls.getSelectionModel().getSelectedIndex()).getNationality());
+            } else {
+                plName.setText(null);
+                plAge.setText(null);
+                plNationality.setText(null);
+            }
+        }
     }
 
     @FXML
