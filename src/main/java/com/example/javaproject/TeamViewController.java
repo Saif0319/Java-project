@@ -125,6 +125,8 @@ public class TeamViewController implements Initializable {
                 plName.setText(null);
                 plAge.setText(null);
                 plNationality.setText(null);
+                addError.setText("You have no players in your team");
+                addError.setVisible(true);
             }
         }
     }

@@ -14,7 +14,7 @@
    <children>
       <HBox alignment="CENTER" layoutX="284.0" layoutY="128.0" spacing="7.0">
          <children>
-            <VBox alignment="CENTER" spacing="59.0">
+            <VBox alignment="CENTER" spacing="50.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
                      <VBox.margin>
